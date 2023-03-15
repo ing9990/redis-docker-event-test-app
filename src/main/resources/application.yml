@@ -1,0 +1,30 @@
+server:
+  port: 8999
+
+spring:
+  cache:
+    type: redis
+
+  redis:
+    host: localhost #host.docker.internal
+    port: 6379
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/springevent
+    username: root
+    password:
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+logging:
+  level:
+    org.hibernate.sql: debug
+    org.hibernate.type: trace
