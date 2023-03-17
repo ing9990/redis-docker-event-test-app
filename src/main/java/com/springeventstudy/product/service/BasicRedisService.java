@@ -21,6 +21,8 @@ public class BasicRedisService implements RedisService {
 
     @Override
     public Object get(String key) {
+        ValueOperations<String, Object> vop = redisTemplate.opsForValue();
+
         return redisTemplate.opsForValue().get(key);
     }
 }
